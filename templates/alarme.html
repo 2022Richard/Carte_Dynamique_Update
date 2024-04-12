@@ -1,0 +1,76 @@
+{% extends 'static/base.html' %}
+   
+    {% block title %}
+
+        <title>Carte </title>
+
+    {% endblock %}
+
+    {% block header %}
+
+        {% include 'static/header.html' %}
+
+    {% endblock %}
+
+    {% block content %}
+            <section  class="my-0" id="connection">
+                <div class="container">
+                    <div class="row gy-4 align-items-center">
+                        <div class="col-12 col-md-12">
+                            <h1 class="fw-bold text-md-center" id ="defile"><center>Cartographie des declenchements alarmes à Abidjan </center></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <marquee><i>Les données proviennent des déclenchements des sites alarmes de la ville d'Abidjan dans le mois de Février 2024</i></marquee>   
+            <section id="information" class="py-5 bg-light">
+                <div class="container">
+
+                    <div class="row" >
+                       <h5 class="text-center"> Veuillez cliquer sur l'un des boutons ci-dessous pour visualiser une carte </h5>
+                    </div>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Tous les declenchements</h5>
+                              <p class="card-text">La carte représente tous les déclenchements</p>
+                              <a href="{% url 'DOP_G4S:carte_all' %}" target="_blank" class="btn btn-primary">Envoyer</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Tous les declenchements</h5>
+                              <p class="card-text">La carte représente tous les déclenchements par tranche de deux heures</p>
+                              <a href="{% url 'DOP_G4S:all_tranche_deux_heures' %}" target="_blank" class="btn btn-primary">Envoyer</a> 
+                            </div> 
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Intervention Justifiée</h5>
+                              <p class="card-text">936 declenchements : 935 chez les bancaires et 01 non bancaire</p>
+                              <a href="{% url 'DOP_G4S:inter_justifie' %}" target="_blank" class="btn btn-primary">Envoyer</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Type de client : sensible (DG, Ministre) et non sensible</h5>
+                              <p class="card-text">63 déclenchements dont 6 chez les clients sensibles</p>
+                              <a href="{% url 'DOP_G4S:type_client' %}" target="_blank" class="btn btn-primary">Envoyer</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            
+    {% endblock %}

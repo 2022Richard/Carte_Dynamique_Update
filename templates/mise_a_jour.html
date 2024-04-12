@@ -1,0 +1,85 @@
+{% extends 'static/base.html' %}
+   
+    {% block title %}
+
+        <title>Mise à Jour des données</title>
+
+    {% endblock %}
+
+
+    {% block header %}
+
+        {% include 'static/header.html' %}
+
+    {% endblock %}
+
+
+    {% block content %}
+
+            <section  class="my-5" id="connection">
+                <div class="container">
+                    <div class="row gy-4 align-items-center">
+                        <div class="col-12 col-md-12">
+                            <h1 class="fw-bold text-md-center" id ="defile"><center>Mise à jour des données</center></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="information" class="py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <p class="lead mb-4 text-md-center" > 
+                            Pour effectuer la mise à jour des données, veuillez cliquer sur le bouton <mark>choisir un fichier</mark> <br> 
+                            pour l'importation puis sur le bouton <mark>lancer la mise à jour</mark>       
+                        </p>  
+                    </div>   
+                    
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-4">
+                                    
+                                </div>   
+                            </div>
+
+                            <div class="col">
+                                <div class="input-group mb-4">      
+                                        {% csrf_token %}
+                                        <input type="file" class="form-control" id="customFile" required name="files"> 
+                                </div>   
+                            </div>
+                            
+                            <div class="col">
+                                <div class="input-group mb-4">
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-primary" name="alarme" >Lancer la mise à jour</button>
+                                     <!--   <button type="submit" class="btn btn-danger" name="open" title="Desactiver actuellement" disabled>OPEN / CLOSE</button> -->
+                                    </div>
+                                </div>   
+                            </div>
+
+                            <div class="col">
+                                <div class="input-group-append">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'error' %}                             
+                                <div class="alert alert-danger text-center"><strong>{{ message }}</strong></div>                                       
+                            {% else %}  
+                                <div class="alert alert-{{ message.tags }} text-center"><strong>{{ message }}</strong></div>
+                            {% endif %}                                                                                    
+                        {% endfor %}            
+                    {% endif %}
+
+                </div>    
+
+            </section> 
+            
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'static/base.html' %}
+   
+    {% block title %}
+
+        <title>Accueil</title>
+
+    {% endblock %}
+
+
+    {% block header %}
+
+            {% include 'static/header.html' %}
+
+    {% endblock %}
+
+
+    {% block content %}
+
+            <section  class="my-5" id="connection">
+                <div class="container">
+                    <div class="row gy-4 align-items-center">
+                        <div class="col-12 col-md-12">
+                            <h1 class="fw-bold text-md-center" id ="defile"><center>Cartographie des declenchements</center></h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="information" class="py-5 bg-light">
+                <p class="lead mb-4 text-md-center" > 
+                    Cet outil est une représentation graphique de l'ensemble des déclenchements alarme survenus chaque jour sur nos sites à Abidjan
+                    <br> Pour mettre à jour les données, veuillez cliquer sur le champ Rapport
+                    <br> Pour visualiser la carte, veuillez cliquer sur le champ Carte
+                    <br> Pour vos remarques, critiques et suggestions, veuillez cliquer sur le champ contact<br>
+                </p>
+            </section>
+
+            <br> 
+
+    {% endblock %}
+
+ 
+    

@@ -1,0 +1,56 @@
+<header class="py-4">      
+    <nav nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bold" href="#">
+                <span class="bg-danger bg-gradient p-1 rounded-3 text-light">DIRECTION DES OPERATIONS G4S CI </span> 
+            </a>
+            
+            <ul class="navbar-nav">
+
+                {% if etat == 'accueil' %} 
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'carte:accueil' %}" title="Accueil"><mark>Accueil</mark> </a>
+                    </li>
+                {% else %}                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carte:accueil' %}" title="Accueil">Accueil</a>
+                    </li>
+                {% endif %}
+
+                {% if etat == 'MAP' %} 
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'carte:update' %}" title="Mettre à jour les données"><mark>Mise à Jour</mark> </a>
+                    </li>
+                {% else %}                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carte:update' %}" title="Mettre à jour les données">Mise à Jour</a>
+                    </li>
+                {% endif %}
+
+                {% if etat == 'carte' %} 
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'carte:carte' %}"  title="Cliquez ici pour la carte"><mark>Carte</mark></a>
+                    </li>
+                {% else %}                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carte:carte' %}"  title="Cliquez ici pour la carte">Carte</a>
+                    </li>
+                {% endif %}
+               
+                {% if etat == 'contact' %} 
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'carte:contact' %}" title="Nous contacter"><mark>Contact</mark></a>
+                    </li>
+                {% else %}                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carte:contact' %}" title="Nous contacter">Contact</a>
+                    </li>
+                {% endif %}
+               
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
